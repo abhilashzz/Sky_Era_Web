@@ -11,7 +11,8 @@ export default function Footer({ onOpenDemoModal }) {
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Learning', href: '#learning' },
     { label: 'For Museums', href: '#museums' },
-    { label: 'About', href: '#about' }
+    { label: 'About', href: '#about' },
+    { label: 'Team', href: '#team' }
   ];
 
   const handleLinkClick = (e, href) => {
@@ -81,6 +82,7 @@ export default function Footer({ onOpenDemoModal }) {
                 <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenDemoModal(); }}>Request a Demo</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenDemoModal(); }}>Institutional Partnership</a></li>
                 <li><a href="#about" onClick={(e) => handleLinkClick(e, '#about')}>Research & Design</a></li>
+                <li><a href="#team" onClick={(e) => handleLinkClick(e, '#team')}>Supervisors & Developers</a></li>
               </ul>
             </div>
           </div>

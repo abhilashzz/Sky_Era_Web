@@ -18,6 +18,7 @@ import ExperiencePreview from './components/ExperiencePreview';
 import MuseumCTA from './components/MuseumCTA';
 import Impact from './components/Impact';
 import About from './components/About';
+import Team from './components/Team';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import DemoModal from './components/DemoModal';
@@ -140,7 +141,12 @@ export default function App() {
 
         <div className="section-divider" />
 
-        {/* Section 16: Final CTA */}
+        {/* Section 16: Research Supervision & Development Team */}
+        <Team />
+
+        <div className="section-divider" />
+
+        {/* Section 17: Final CTA */}
         <FinalCTA onOpenDemoModal={openDemoModal} />
       </main>
 

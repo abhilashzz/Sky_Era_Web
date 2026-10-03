@@ -35,7 +35,8 @@ export default function Navbar({ onOpenDemoModal, theme = 'dark', onToggleTheme 
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Learning', href: '#learning' },
     { label: 'For Museums', href: '#museums' },
-    { label: 'About', href: '#about' }
+    { label: 'About', href: '#about' },
+    { label: 'Team', href: '#team' }
   ];
 
   const handleLinkClick = (e, href) => {

@@ -1492,3 +1492,309 @@
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+/* --------------------------------------------------------------------------
+   SECTION 17 — SUPERVISION & DEVELOPMENT TEAM
+   -------------------------------------------------------------------------- */
+.team-section {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+.supervisors-wrapper {
+  max-width: 920px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.supervisors-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+}
+
+.supervisors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 680px) {
+  .supervisors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.supervisor-card {
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 540px) {
+  .supervisor-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.15rem;
+  }
+}
+
+.supervisor-avatar-wrap {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 12px var(--accent-gold-glow);
+  background: #020817;
+}
+
+.supervisor-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.supervisor-card:hover .supervisor-avatar {
+  transform: scale(1.08);
+}
+
+.supervisor-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.supervisor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-gold);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.supervisor-card:hover {
+  border-color: var(--accent-gold);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-gold-glow);
+}
+
+.supervisor-card:hover::before {
+  opacity: 1;
+}
+
+.supervisor-role-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  background: rgba(244, 196, 48, 0.12);
+  border: 1px solid rgba(244, 196, 48, 0.3);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 0.65rem;
+  width: fit-content;
+}
+
+.supervisor-name-wrap {
+  margin-bottom: 0.35rem;
+}
+
+.supervisor-link {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast);
+}
+
+.supervisor-link:hover {
+  color: var(--accent-gold);
+}
+
+.supervisor-ext-icon {
+  opacity: 0.6;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.supervisor-link:hover .supervisor-ext-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.supervisor-institution {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+/* Developers Grid */
+.developers-section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.dev-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.developers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .developers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .developers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dev-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--accent-gold-glow);
+}
+
+.dev-photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #020817;
+  overflow: hidden;
+}
+
+.dev-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.dev-card:hover .dev-photo {
+  transform: scale(1.06);
+}
+
+.dev-role-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(13, 27, 42, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  border: 1px solid rgba(244, 196, 48, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dev-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.dev-name {
+  font-size: 1.18rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.dev-degree-tag {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  background: var(--bg-surface-elevated);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.dev-cap-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent-gold);
+}
+
