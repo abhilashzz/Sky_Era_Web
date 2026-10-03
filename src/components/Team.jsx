@@ -1,7 +1,7 @@
 import React from 'react';
-import { GraduationCap, ExternalLink, Code2, Sparkles, Layers } from 'lucide-react';
+import { GraduationCap, ExternalLink, Code2, Layers } from 'lucide-react';
 import malithaImg from '../images/developers/Malitha De Costa.png';
-import luthiraImg from '../images/developers/Luthira Himsara.webp';
+import luthiraImg from '../images/developers/Luthira Himsara.jpeg';
 import navodaImg from '../images/developers/Navoda nethmini wickramasinghe.jpeg';
 import thushadImg from '../images/developers/Thushad Abhilash.jpg';
 import arunaImg from '../images/Supervisor and co- supervise/Mr. Aruna Ishara Gamage.jpeg';
@@ -116,7 +116,6 @@ export default function Team() {
         {/* Developers Section Header */}
         <div className="developers-section-divider">
           <div className="dev-header-pill">
-            <Sparkles size={15} color="var(--accent-gold)" />
             <span>Development Team</span>
           </div>
         </div>

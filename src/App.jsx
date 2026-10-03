@@ -66,28 +66,26 @@ export default function App() {
 
         <div className="section-divider" />
 
-        {/* Section 02: What is SkyEra? */}
+        {/* Section 02: Experience (Intro + How It Works) */}
         <ExperienceIntro />
 
         <div className="section-divider" />
 
-        {/* New Feature: Dedicated Sri Lanka Visible Constellations */}
+        <HowItWorks />
+
+        <div className="section-divider" />
+
+        {/* Section 03: Sri Lanka Skies & Time Travel */}
         <SriLankaConstellations />
 
         <div className="section-divider" />
 
-        {/* Section 03: The Problem / Transformation */}
-        <ProblemTransformation />
-
-        <div className="section-divider" />
-
-        {/* Section 04: Signature "Travel Through Time" */}
         <TimeTravel />
 
         <div className="section-divider" />
 
-        {/* Section 05: How SkyEra Works */}
-        <HowItWorks />
+        {/* Section 04: The Problem / Transformation */}
+        <ProblemTransformation />
 
         <div className="section-divider" />
 

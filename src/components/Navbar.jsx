@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Compass, Sparkles, ArrowRight, X, Menu, Sun, Moon } from 'lucide-react';
+import { Compass, Sparkles, ArrowRight, X, Menu, Sun, Moon, ChevronDown } from 'lucide-react';
 import '../styles/navbar.css';
 
 export default function Navbar({ onOpenDemoModal, theme = 'dark', onToggleTheme }) {
@@ -29,14 +29,29 @@ export default function Navbar({ onOpenDemoModal, theme = 'dark', onToggleTheme 
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Experience', href: '#experience' },
-    { label: 'Sri Lanka Skies', href: '#sri-lanka-skies' },
-    { label: 'Time Travel', href: '#time-travel' },
-    { label: 'How It Works', href: '#how-it-works' },
+    {
+      label: 'Experience',
+      href: '#experience',
+      children: [
+        { label: 'How It Works', href: '#how-it-works' }
+      ]
+    },
+    {
+      label: 'Sri Lanka Skies',
+      href: '#sri-lanka-skies',
+      children: [
+        { label: 'Time Travel Exploration', href: '#time-travel' }
+      ]
+    },
     { label: 'Learning', href: '#learning' },
     { label: 'For Museums', href: '#museums' },
-    { label: 'About', href: '#about' },
-    { label: 'Team', href: '#team' }
+    {
+      label: 'About',
+      href: '#about',
+      children: [
+        { label: 'Supervisors & Developers', href: '#team' }
+      ]
+    }
   ];
 
   const handleLinkClick = (e, href) => {
@@ -71,16 +86,52 @@ export default function Navbar({ onOpenDemoModal, theme = 'dark', onToggleTheme 
 
           {/* Desktop Navigation Links */}
           <nav className="nav-links-desktop" aria-label="Main Navigation">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="nav-link"
-                onClick={(e) => handleLinkClick(e, link.href)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              if (link.children) {
+                return (
+                  <div key={link.label} className="nav-item-dropdown">
+                    <a
+                      href={link.href}
+                      className="nav-link nav-link-with-arrow"
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown size={13} className="nav-chevron" />
+                    </a>
+                    <div className="nav-dropdown-menu">
+                      <a
+                        href={link.href}
+                        className="nav-dropdown-item"
+                        onClick={(e) => handleLinkClick(e, link.href)}
+                      >
+                        <span>{link.label}</span>
+                      </a>
+                      {link.children.map((sub) => (
+                        <a
+                          key={sub.label}
+                          href={sub.href}
+                          className="nav-dropdown-item"
+                          onClick={(e) => handleLinkClick(e, sub.href)}
+                        >
+                          <span>{sub.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="nav-link"
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* CTA, Theme Toggle & Mobile Toggle */}
@@ -137,14 +188,30 @@ export default function Navbar({ onOpenDemoModal, theme = 'dark', onToggleTheme 
 
         <nav className="mobile-nav-links">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="mobile-nav-link"
-              onClick={(e) => handleLinkClick(e, link.href)}
-            >
-              {link.label}
-            </a>
+            <div key={link.label} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <a
+                href={link.href}
+                className="mobile-nav-link"
+                onClick={(e) => handleLinkClick(e, link.href)}
+              >
+                {link.label}
+              </a>
+              {link.children && (
+                <div className="mobile-sub-nav">
+                  {link.children.map((sub) => (
+                    <a
+                      key={sub.label}
+                      href={sub.href}
+                      className="mobile-sub-link"
+                      onClick={(e) => handleLinkClick(e, sub.href)}
+                    >
+                      <span>↳</span>
+                      <span>{sub.label}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 

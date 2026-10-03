@@ -300,7 +300,7 @@ export default function StarExplorer() {
 
                 {/* Announcement Header */}
                 <text x="325" y="322" fill="var(--accent-gold)" fontSize="11" fontWeight="700" letterSpacing="0.1em" textAnchor="middle">
-                  ✨ ORION (MRIGA) CELESTIAL HUNTER REVEALED
+                  ORION (MRIGA) CELESTIAL HUNTER REVEALED
                 </text>
               </g>
             )}
@@ -318,7 +318,7 @@ export default function StarExplorer() {
                 />
                 <circle cx="140" cy="90" r="3" fill="#5BE0E5" />
                 <text x="325" y="322" fill="var(--accent-gold)" fontSize="11" fontWeight="700" letterSpacing="0.1em" textAnchor="middle">
-                  ✨ SAPTARSHI (GREAT BEAR) CELESTIAL FIGURE REVEALED
+                  SAPTARSHI (GREAT BEAR) CELESTIAL FIGURE REVEALED
                 </text>
               </g>
             )}
@@ -333,7 +333,7 @@ export default function StarExplorer() {
                 {/* Arching Stinger */}
                 <path d="M 330 240 Q 390 260 410 210 Q 400 170 380 220" stroke="rgba(244,196,48,0.8)" strokeWidth="2" fill="none" />
                 <text x="325" y="322" fill="var(--accent-gold)" fontSize="11" fontWeight="700" letterSpacing="0.1em" textAnchor="middle">
-                  ✨ VRISHCHIKA (CELESTIAL SCORPION) REVEALED
+                  VRISHCHIKA (CELESTIAL SCORPION) REVEALED
                 </text>
               </g>
             )}
@@ -343,7 +343,7 @@ export default function StarExplorer() {
               <g style={{ opacity: shouldRevealFigure ? 1 : 0, transition: 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1)', pointerEvents: 'none' }}>
                 <ellipse cx="300" cy="135" rx="100" ry="60" fill="rgba(91,224,229,0.25)" filter="blur(18px)" />
                 <text x="325" y="322" fill="var(--accent-gold)" fontSize="11" fontWeight="700" letterSpacing="0.1em" textAnchor="middle">
-                  ✨ KRITTIKA (SEVEN SISTERS VEIL) REVEALED
+                  KRITTIKA (SEVEN SISTERS VEIL) REVEALED
                 </text>
               </g>
             )}

@@ -8,11 +8,10 @@ export default function Footer({ onOpenDemoModal }) {
 
   const navLinks = [
     { label: 'Experience', href: '#experience' },
-    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Sri Lanka Skies', href: '#sri-lanka-skies' },
     { label: 'Learning', href: '#learning' },
     { label: 'For Museums', href: '#museums' },
-    { label: 'About', href: '#about' },
-    { label: 'Team', href: '#team' }
+    { label: 'About', href: '#about' }
   ];
 
   const handleLinkClick = (e, href) => {
