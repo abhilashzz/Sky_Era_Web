@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 400" preserveAspectRatio="none" fill="none">
+  <defs>
+    <linearGradient id="horizonGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B2D63" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#061631" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#020817" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="goldAccentGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D6A85F" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#020817" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="stupaShade" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0E2445"/>
+      <stop offset="40%" stop-color="#07172E"/>
+      <stop offset="100%" stop-color="#020817"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Far Mountain / Sigiriya silhouette in distance -->
+  <path d="M0 320 Q 220 280 440 310 T 880 295 T 1320 315 T 1680 290 Q 1820 280 1920 310 L 1920 400 L 0 400 Z" fill="#040F22" opacity="0.6"/>
+  
+  <!-- Sigiriya Rock profile silhouette at left-center (approx x=580 to 760) -->
+  <path d="M 590 320 L 610 260 Q 625 240 660 235 L 710 235 Q 735 242 745 270 L 765 320 Z" fill="#051329" opacity="0.8"/>
+
+  <!-- Midground Hills and ancient stone terrace -->
+  <path d="M0 340 C 350 320 600 350 900 330 C 1200 310 1550 350 1920 335 L 1920 400 L 0 400 Z" fill="#030C1C"/>
+
+  <!-- Great Stupa (Jetavanaramaya / Ruwanwelisaya) at center-right (approx x=1220 to 1480) -->
+  <g id="great-stupa">
+    <!-- Base Terraces (Pesavas) -->
+    <rect x="1200" y="350" width="280" height="15" rx="3" fill="#020817"/>
+    <rect x="1220" y="338" width="240" height="12" rx="2" fill="#051329"/>
+    <rect x="1240" y="328" width="200" height="10" rx="2" fill="#071936"/>
+    
+    <!-- Dome (Garbhaya / Bell) -->
+    <path d="M 1250 328 C 1250 200, 1430 200, 1430 328 Z" fill="url(#stupaShade)"/>
+    
+    <!-- Square Chamber (Hathares Kotuwa) -->
+    <rect x="1324" y="172" width="32" height="28" fill="#0A244C" stroke="#D6A85F" stroke-width="0.5" stroke-opacity="0.4"/>
+    
+    <!-- Cylinder (Devatha Kotuwa) -->
+    <rect x="1330" y="152" width="20" height="20" fill="#091E3F"/>
+    
+    <!-- Spire (Koth Kerella) -->
+    <path d="M 1332 152 L 1340 70 L 1348 152 Z" fill="#0E2850"/>
+    
+    <!-- Pinnacle Gem (Chudamanikya) glowing gold -->
+    <circle cx="1340" cy="68" r="3.5" fill="#D6A85F"/>
+    <circle cx="1340" cy="68" r="12" fill="url(#goldAccentGlow)"/>
+  </g>
+
+  <!-- Ancient Stone Pillars (Vatadage / Lovamahapaya heritage elements) -->
+  <g opacity="0.6">
+    <rect x="240" y="310" width="6" height="50" fill="#091E3F"/>
+    <rect x="270" y="295" width="7" height="65" fill="#0A2247"/>
+    <rect x="300" y="305" width="6" height="55" fill="#071936"/>
+    <rect x="330" y="318" width="6" height="42" fill="#051329"/>
+    
+    <!-- Pillar capitals -->
+    <polygon points="268,295 279,295 276,300 271,300" fill="#D6A85F" opacity="0.4"/>
+  </g>
+
+  <!-- Ground base dark wash -->
+  <rect x="0" y="360" width="1920" height="40" fill="#020817"/>
+  <!-- Atmospheric baseline highlight -->
+  <line x1="0" y1="360" x2="1920" y2="360" stroke="#0B2D63" stroke-width="1" stroke-opacity="0.3"/>
+</svg>

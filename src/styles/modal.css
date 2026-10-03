@@ -1,0 +1,170 @@
+/* ==========================================================================
+   SKYERA — Demo Request Modal Styles (Theme Aware)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  background: radial-gradient(circle at 50% 0%, var(--bg-surface-elevated) 0%, var(--bg-surface) 60%, var(--bg-primary) 100%);
+  border: 1px solid var(--accent-gold);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7), 0 0 35px var(--accent-gold-glow);
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(20px);
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--accent-gold);
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+}
+
+.modal-logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: screen;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(244, 196, 48, 0.2));
+  transition: filter var(--transition-smooth);
+}
+
+[data-theme="light"] .modal-logo-img {
+  filter: invert(1) drop-shadow(0 0 4px rgba(0, 0, 0, 0.15));
+  mix-blend-mode: multiply;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-wrap: balance;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 12px var(--accent-gold-glow);
+}
+
+.form-input.error, .form-select.error, .form-textarea.error {
+  border-color: #EF4444;
+}
+
+.error-text {
+  font-size: 0.78rem;
+  color: #F87171;
+  margin-top: 2px;
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Success State */
+.modal-success-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.modal-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-gold-glow);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--accent-gold);
+}
+
+@keyframes modalFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  to { transform: translateY(0); }
+}

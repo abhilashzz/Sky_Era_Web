@@ -1,0 +1,408 @@
+/* ==========================================================================
+   SKYERA — Global Design System & Variables
+   Theme: User Palette (#0D1B2A, #1B263B, #415A77, #778DA9, #E0E1DD) + Gold/Yellow
+   Typography: DM Sans
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  /* Dark Mode Theme Tokens */
+  --bg-primary: #0D1B2A;
+  --bg-secondary: #1B263B;
+  --bg-surface: rgba(27, 38, 59, 0.78);
+  --bg-surface-elevated: rgba(65, 90, 119, 0.35);
+  --bg-glass: rgba(13, 27, 42, 0.82);
+  --bg-overlay: rgba(13, 27, 42, 0.75);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #DCE3EC;
+  --text-muted: #A8B8CC;
+  --text-dim: rgba(255, 255, 255, 0.55);
+
+  /* Gold & Yellow Accents */
+  --accent-gold: #F4C430;
+  --accent-gold-light: #FDE047;
+  --accent-yellow: #FFC72C;
+  --accent-gold-glow: rgba(244, 196, 48, 0.25);
+  --accent-bronze: #8E6536;
+  --accent-blue: #415A77;
+  --accent-blue-light: #778DA9;
+  --accent-cyan: #5BE0E5;
+
+  --border-subtle: rgba(119, 141, 169, 0.22);
+  --border-hover: rgba(244, 196, 48, 0.45);
+  --border-active: rgba(244, 196, 48, 0.85);
+  --border-glow: 0 0 20px rgba(244, 196, 48, 0.18);
+
+  --shadow-panel: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --kiosk-outer: #050B12;
+}
+
+[data-theme="light"] {
+  /* Light Mode Theme Tokens */
+  --bg-primary: #E0E1DD;
+  --bg-secondary: #D2D7DC;
+  --bg-surface: rgba(255, 255, 255, 0.88);
+  --bg-surface-elevated: #FFFFFF;
+  --bg-glass: rgba(224, 225, 221, 0.88);
+  --bg-overlay: rgba(224, 225, 221, 0.78);
+
+  --text-primary: #0D1B2A;
+  --text-secondary: #415A77;
+  --text-muted: #64748B;
+  --text-dim: rgba(13, 27, 42, 0.45);
+
+  /* Gold & Yellow Accents (Tuned for light background contrast) */
+  --accent-gold: #D49A24;
+  --accent-gold-light: #E5A823;
+  --accent-yellow: #B8860B;
+  --accent-gold-glow: rgba(212, 154, 36, 0.2);
+  --accent-bronze: #8E6536;
+  --accent-blue: #1B263B;
+  --accent-blue-light: #415A77;
+  --accent-cyan: #0284C7;
+
+  --border-subtle: rgba(65, 90, 119, 0.2);
+  --border-hover: rgba(212, 154, 36, 0.55);
+  --border-active: rgba(212, 154, 36, 0.9);
+  --border-glow: 0 0 20px rgba(212, 154, 36, 0.15);
+
+  --shadow-panel: 0 15px 45px rgba(13, 27, 42, 0.12);
+  --kiosk-outer: #1B263B;
+}
+
+:root {
+  /* Typography: DM SANS */
+  --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Sizing & Layout */
+  --max-width: 1360px;
+  --max-width-wide: 1540px;
+  --max-width-editorial: 960px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   CSS Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: transparent;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: color var(--transition-smooth);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: transparent;
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  transition: color var(--transition-smooth);
+}
+
+/* Ensure no text or image crop, prevent unwanted layer overflows */
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p, span, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* ==========================================================================
+   Typography Hierarchy
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  transition: color var(--transition-smooth);
+  text-wrap: balance;
+}
+
+.hero-heading {
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.section-heading {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.section-subheading {
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: color var(--transition-smooth);
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  box-shadow: 0 0 8px var(--accent-gold);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 400;
+  max-width: 65ch;
+  transition: color var(--transition-smooth);
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-heading);
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+  position: relative;
+  z-index: 2;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--max-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+  position: relative;
+  z-index: 2;
+}
+
+#main-content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.section-wrapper {
+  position: relative;
+  background: transparent;
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  scroll-margin-top: 80px;
+  transition: background-color var(--transition-smooth);
+}
+
+/* Astronomical Section Divider */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-subtle) 50%, transparent 100%);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Button System
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-yellow) 100%);
+  color: #0D1B2A;
+  font-weight: 700;
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: none;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.btn-outline-gold {
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(244, 196, 48, 0.15);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-gold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent-gold);
+  transform: rotate(20deg) scale(1.08);
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   Glass Cards & Modern Containers
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
